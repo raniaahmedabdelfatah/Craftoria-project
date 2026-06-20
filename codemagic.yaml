@@ -18,7 +18,8 @@ workflows:
           flutter build ipa --no-codesign
       - name: Send to Telegram
         script: |
-          # ده بوت تليجرام مخصص هيبعت الفايل علطول لشات خاص بيكِ
-          curl -F chat_id="7352358897" -F document=@build/ios/ipa/Craftoria-project.ipa https://api.telegram.org/bot7811652011:AAFuYFm2t97x0IbyX_pIbyOolY95gL1_H8U/sendDocument
+          # السطر ده بيدور على الملف أوتوماتيك ويبعته للبوت فوراً
+          IPA_FILE=$(find build/ios/ipa -name "*.ipa" | head -n 1)
+          curl -F chat_id="7352358897" -F document=@"$IPA_FILE" https://api.telegram.org/bot7811652011:AAFuYFm2t97x0IbyX_pIbyOolY95gL1_H8U/sendDocument
     artifacts:
       - build/ios/ipa/*.ipa
