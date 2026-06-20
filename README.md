@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # graduation2
 
 A new Flutter project.
@@ -14,3 +15,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# Craftoria-project
+graduation
+>>>>>>> 1ddc416152b7292ee3bce8552eec52f1e18ac68b
