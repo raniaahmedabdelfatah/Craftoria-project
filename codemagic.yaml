@@ -1,8 +1,8 @@
 workflows:
   ios-workflow:
     name: iOS Build Workflow
-    max_build_duration: 60
-    instance_type: mac_mini_m1
+    max_build_duration: 30
+    instance_type: mac_mini_m2
     environment:
       flutter: stable
       xcode: latest
@@ -10,11 +10,11 @@ workflows:
       events:
         - push
     scripts:
-      - name: Set up code signing settings
-        script: keychain initialize
       - name: Get Flutter packages
-        script: flutter pub get
+        script: |
+          flutter pub get
       - name: Build Flutter iOS IPA
-        script: flutter build ipa --release --no-codesign
+        script: |
+          flutter build ipa --no-codesign
     artifacts:
       - build/ios/ipa/*.ipa
